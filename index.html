@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<meta name="description" content="Welcome to PastPaper Hub, your online destination for finding, searching, and downloading past exam papers. Explore past papers from schools across South Africa by school, grade, subject, and year to prepare for your exams and improve your results.">
+
+<title>PastPaper Hub | Find and Download Past Exam Papers</title>
+
+<meta name="description" content="Find and download past exam papers from schools across South Africa. Search by school, grade, subject, and year with PastPaper Hub to prepare for your exams.">
+
+<meta name="keywords" content="PastPaper Hub, South African past papers, exam papers, school past papers, Grade 10 past papers, Grade 11 past papers, Grade 12 past papers, study resources">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="PastPaper Hub | Past Exam Papers">
+
+<meta property="og:description" content="Find past exam papers by school, grade, subject, and year. Prepare smarter with PastPaper Hub.">
+
+<meta property="og:type" content="website">
+
+    <meta
+        name="description"
+        content="Find school past papers by school, subject, grade and year. Prepare for exams with PastPaper Hub."
+    >
+
+    <meta name="theme-color" content="#111827">
+
+    <title>PastPaper Hub | Find School Past Papers</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">PastPaper Hub</a>
+
+            <div class="nav-links">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="Pastpapers.html">Past Papers</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="#upload-paper">Upload Paper</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR EXAM PREPARATION PARTNER</p>
+
+                <h1>Your Gateway to School Past Papers</h1>
+
+                <p>
+                    Find educational resources, practise exam questions
+                    and prepare for your next examination.
+                </p>
+
+                <a href="#paper-search" class="btn">
+                    Find Past Papers
+                </a>
+            </div>
+        </section>
+
+        
+
+            <p
+                id="searchStatus"
+                class="search-status"
+                role="status"
+                aria-live="polite"
+            >
+                Enter a school or subject to begin.
+            </p>
+
+            <div id="paperResults" class="paper-grid"></div>
+        </section>
+
+        <!-- FEATURES -->
+        <section id="features" class="content-section">
+            <div class="section-heading">
+                <p class="eyebrow">WHY PASTPAPER HUB?</p>
+                <h2>Study Smarter</h2>
+
+                <p>
+                    Everything is designed to make finding and
+                    practising past papers easier.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <span>01</span>
+                    </div>
+
+                    <h3>Find Past Papers</h3>
+
+                    <p>
+                        Search for available papers by school,
+                        subject, grade and examination year.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <span>02</span>
+                    </div>
+
+                    <h3>Share Resources</h3>
+
+                    <p>
+                        Submit educational resources for review
+                        so they can help other students.
+                    </p>
+
+                    <a href="#upload-paper" class="text-link">
+                        Submit a paper →
+                    </a>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <span>03</span>
+                    </div>
+
+                    <h3>Prepare for Exams</h3>
+
+                    <p>
+                        Practise with available examination papers
+                        and strengthen your understanding.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- UPLOAD PAPER SECTION -->
+        <section
+            id="upload-paper"
+            class="content-section upload-section"
+        >
+            <div class="section-heading">
+                <p class="eyebrow">CONTRIBUTE TO THE LIBRARY</p>
+                <h2>Upload a Past Paper</h2>
+
+                <p>
+                    Share a PDF with other students. Every submission
+                    must be reviewed by an administrator before it
+                    becomes publicly available.
+                </p>
+            </div>
+
+            <p>PDF files only. Maximum size 10MB</p>
+            <form id="uploadForm" class="upload-form">
+
+                <div class="search-field">
+                    <label for="title">Paper title</label>
+                    <input
+                        id="title"
+                        name="title"
+                        type="text"
+                        placeholder="e.g. Mathematics June Examination"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <div class="search-field">
+                    <label for="schoolName">School name</label>
+                    <input
+                        id="schoolName"
+                        name="schoolName"
+                        type="text"
+                        placeholder="Enter the school name"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <div class="search-field">
+                    <label for="subject">Subject</label>
+                    <input
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        placeholder="e.g. Mathematics"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="filter-field">
+                    <label for="grade">Grade</label>
+                    <select id="grade" name="grade" required>
+                        <option value="">Choose a grade</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
+                </div>
+
+                <div class="filter-field">
+                    <label for="examYear">Exam year</label>
+                    <input
+                        id="examYear"
+                        name="examYear"
+                        type="number"
+                        min="2000"
+                        max="2100"
+                        placeholder="e.g. 2025"
+                    >
+                </div>
+
+                <div class="search-field">
+                    <label for="paperFile">Select a PDF file</label>
+                    <input
+                        id="paperFile"
+                        name="paperFile"
+                        type="file"
+                        accept=".pdf,application/pdf"
+                        required
+                    >
+                    
+                </div>
+
+                <button type="submit" class="btn" id="uploadButton">
+                    Submit for Approval
+                </button>
+
+                <p
+                    id="uploadMessage"
+                    class="search-status"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section" style="margin-left: 50px;">
+            <h2>Have a past paper to share?</h2>
+
+            <p>
+                Help other students by submitting a paper
+                for administrator review.
+            </p>
+
+            <a href="#upload-paper" class="btn">
+                Upload a Paper
+            </a>
+
+            
+<!-- Website Rating Popup -->
+<div id="ratingPopup" class="rating-popup">
+    <div class="rating-box">
+        <button type="button" id="closeRating" class="close-rating"
+            aria-label="Close rating popup">&times;</button>
+
+        <h2>Rate PastPaper Hub</h2>
+        <p>How was your experience using our website?</p>
+
+        <div class="rating-stars" role="group" aria-label="Rate our website">
+            <button type="button" class="star" data-rating="1" aria-label="1 star">★</button>
+            <button type="button" class="star" data-rating="2" aria-label="2 stars">★</button>
+            <button type="button" class="star" data-rating="3" aria-label="3 stars">★</button>
+            <button type="button" class="star" data-rating="4" aria-label="4 stars">★</button>
+            <button type="button" class="star" data-rating="5" aria-label="5 stars">★</button>
+        </div>
+
+        <p id="ratingText">Choose a star rating</p>
+
+        <textarea id="ratingComment"
+            placeholder="Tell us how we can improve (optional)"
+            rows="3"></textarea>
+
+        <button type="button" id="submitRating" class="submit-rating">
+            Submit Rating
+        </button>
+
+        <p id="ratingMessage" aria-live="polite"></p>
+    </div>
+</div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <a href="index.html" class="logo">PastPaper Hub</a>
+
+            <p>
+                Helping students find resources to prepare
+                for their exams.
+            </p>
+
+            <p class="copyright">
+                &copy; 2026 PastPaper Hub. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- CLEAR SEARCH -->
+    <script>
+        const clearButton = document.querySelector("#clearSearch");
+
+        clearButton.addEventListener("click", () => {
+            document.querySelector("#searchInput").value = "";
+            document.querySelector("#gradeFilter").value = "";
+            document.querySelector("#yearFilter").value = "";
+
+            document.querySelector("#searchInput").dispatchEvent(
+                new Event("input", { bubbles: true })
+            );
+        });
+    </script>
+
+    <!-- SEARCH AND AUTOCOMPLETE -->
+    <script type="module" src="search.js"></script>
+
+    <!-- UPLOAD FORM AND SUPABASE -->
+    <script type="module">
+        import { uploadPastPaper } from "./upload.js";
+
+        const form = document.querySelector("#uploadForm");
+        const message = document.querySelector("#uploadMessage");
+        const button = document.querySelector("#uploadButton");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            button.disabled = true;
+            button.textContent = "Uploading...";
+            message.textContent = "Please wait while your paper uploads.";
+
+            try {
+                const result = await uploadPastPaper({
+                    title: document.querySelector("#title").value,
+                    schoolName: document.querySelector("#schoolName").value,
+                    subject: document.querySelector("#subject").value,
+                    grade: document.querySelector("#grade").value,
+                    examYear: document.querySelector("#examYear").value,
+                    file: document.querySelector("#paperFile").files[0]
+                });
+
+                message.textContent = result.message;
+                form.reset();
+
+            } catch (error) {
+                console.error("Paper upload error:", error);
+
+                message.textContent =
+                    "Upload failed. Please check your connection and try again.";
+            } finally {
+                button.disabled = false;
+                button.textContent = "Submit for Approval";
+            }
+        });
+    </script>
+
+    <style>
+        
+/* ========================================
+   PASTPAPER HUB — UPLOAD PAPER SECTION
+======================================== */
+
+.upload-section {
+    position: relative;
+    max-width: 900px;
+    margin: 70px auto;
+    padding: 45px 35px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #111827,
+        #1f2937,
+        #111827
+    );
+
+    border: 1px solid #124bbd;
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    isolation: isolate;
+}
+
+/* Orange glow in the background */
+.upload-section::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -100px;
+
+    width: 280px;
+    height: 280px;
+
+    background: rgba(249, 115, 22, 0.12);
+    filter: blur(70px);
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Decorative orange line */
+.upload-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+
+    width: 80%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #0050f1,
+        #1f65f2,
+        transparent
+    );
+}
+
+/* Section heading */
+.upload-section .section-heading {
+    position: relative;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.upload-section .eyebrow {
+    color: #0050f1;
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.upload-section .section-heading h2 {
+    color: #ffffff;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 12px 0;
+}
+
+.upload-section .section-heading > p:last-child {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+/* Upload form layout */
+.upload-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+    padding: 28px;
+
+    background: rgba(17, 24, 39, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    backdrop-filter: blur(12px);
+}
+
+/* Form field containers */
+.upload-form .search-field,
+.upload-form .filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+/* Labels */
+.upload-form label {
+    color: #f9fafb;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+/* Text inputs and select boxes */
+.upload-form input:not([type="file"]),
+.upload-form select {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    color: #ffffff;
+    background: #1f2937;
+
+    border: 1px solid #374151;
+    border-radius: 10px;
+
+    font: inherit;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+/* Placeholder */
+.upload-form input::placeholder {
+    color: #9ca3af;
+}
+
+/* Focus effect */
+.upload-form input:not([type="file"]):focus,
+.upload-form select:focus {
+    outline: none;
+    border-color: #0050f1;
+
+    background: #182231;
+
+    box-shadow:
+        0 0 0 3px rgba(249, 115, 22, 0.14),
+        0 0 18px rgba(249, 115, 22, 0.08);
+}
+
+/* PDF upload field */
+.upload-form input[type="file"] {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    color: #d1d5db;
+    background: #1f2937;
+
+    border: 1px dashed #6b7280;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.upload-form input[type="file"]:hover {
+    border-color: #0050f1;
+    background: #242f40;
+}
+
+/* Style the file chooser button */
+.upload-form input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 9px 13px;
+
+    color: #111827;
+    background: #0050f1;
+
+    border: none;
+    border-radius: 7px;
+
+    font-weight: 800;
+    cursor: pointer;
+
+    transition: background 0.25s ease;
+}
+
+.upload-form input[type="file"]::file-selector-button:hover {
+    background: #0050f1;
+}
+
+/* File size information */
+.upload-form small {
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+/* Submit button */
+.upload-form button[type="submit"] {
+    position: relative;
+    grid-column: 1 / -1;
+
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 22px;
+
+    overflow: hidden;
+
+    color: #111827;
+    background: linear-gradient(135deg, #0050f1, #0f5aef);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 18px rgba(249, 115, 22, 0.18);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* Moving shine effect */
+.upload-form button[type="submit"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+}
+
+.upload-form button[type="submit"]:hover::before {
+    left: 150%;
+}
+
+.upload-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0249d6, #0050f1);
+
+    box-shadow:
+        0 0 18px rgba(249, 115, 22, 0.25),
+        0 8px 25px rgba(249, 115, 22, 0.12);
+}
+
+/* Keyboard accessibility */
+.upload-form button[type="submit"]:focus-visible {
+    outline: 3px solid #0050f1;
+    outline-offset: 4px;
+}
+
+/* Disabled while uploading */
+.upload-form button[type="submit"]:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    box-shadow: none;
+}
+
+/* Upload status message */
+.upload-form #uploadMessage {
+    grid-column: 1 / -1;
+
+    margin: 0;
+    padding: 13px 15px;
+
+    color: #0c5af6;
+    background: rgba(249, 115, 22, 0.08);
+
+    border-left: 3px solid #0050f1;
+    border-radius: 5px;
+
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Responsive design */
+@media (max-width: 650px) {
+    .upload-section {
+        width: calc(100% - 28px);
+        box-sizing: border-box;
+
+        margin: 40px auto;
+        padding: 30px 18px;
+
+        border-radius: 16px;
+    }
+
+    .upload-form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        padding: 18px;
+    }
+
+    .upload-form button[type="submit"],
+    .upload-form #uploadMessage {
+        grid-column: 1;
+    }
+
+    .upload-section .eyebrow {
+        letter-spacing: 2px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .upload-section *,
+    .upload-section *::before,
+    .upload-section *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+/* Website Rating Popup - Blue Theme */
+.rating-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 10, 35, 0.82);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.rating-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(145deg, #07152e, #102d63, #0050f1);
+    border: 1px solid #4384ff;
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(0, 80, 241, 0.35);
+    animation: ratingAppear 0.3s ease;
+}
+
+.rating-box h2 {
+    margin-bottom: 10px;
+    color: #8bb8ff;
+}
+
+.rating-box p {
+    color: #d5e4ff;
+    line-height: 1.5;
+}
+
+.close-rating {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-rating:hover {
+    color: #8bb8ff;
+}
+
+/* Yellow rating stars */
+.rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0 10px;
+}
+
+.star {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #777777;
+    font-size: 35px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.star:hover,
+.star.active {
+    color: #ffcc00;
+}
+
+.star:hover {
+    transform: scale(1.12);
+}
+
+.rating-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 12px 0;
+    padding: 12px;
+    resize: vertical;
+    color: #ffffff;
+    background: #081a38;
+    border: 1px solid #376ac0;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.rating-box textarea::placeholder {
+    color: #a9c4f5;
+}
+
+.rating-box textarea:focus {
+    outline: 2px solid #0050f1;
+    border-color: #8bb8ff;
+}
+
+.submit-rating {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #4384ff;
+    border-radius: 8px;
+    background: #0050f1;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-rating:hover {
+    background: #286cff;
+    box-shadow: 0 0 16px rgba(0, 80, 241, 0.5);
+}
+
+.submit-rating:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#ratingMessage {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+@keyframes ratingAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .rating-box {
+        padding: 25px 18px;
+    }
+
+    .star {
+        font-size: 30px;
+    }
+}
+
+
+
+    </style>
+
+    <!-- SCROLL EFFECTS -->
+    <script src="scroll.js" defer></script>
+
+    <script src="rating.js"></script>
+</body>
+</html>

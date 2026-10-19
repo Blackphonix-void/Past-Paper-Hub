@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact PastPaper Hub with questions, suggestions or concerns.">
+    <title>PastPaper Hub | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PastPaper Hub</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Pastpapers.html">Past Papers</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Contact Us</h1>
+            <p>Have a question or suggestion? Get in touch.</p>
+        </section>
+
+        <section class="content-section contact-section">
+            <h2>Contact the Administrator</h2>
+
+            <p>
+                Contact us if you experience a problem, want to
+                report an incorrect paper or have suggestions for
+                improving PastPaper Hub.
+            </p>
+
+            <form action="mailto:your-email@example.com"
+          method="post"
+          enctype="text/plain">
+
+        <label for="name">Your Name</label><br>
+        <input
+            type="text"
+            id="name"
+            name="Name"
+            placeholder="Enter your name"
+            required
+        >
+        <br><br>
+
+        <label for="email">Your Email</label><br>
+        <input
+            type="email"
+            id="email"
+            name="Email"
+            placeholder="Enter your email"
+            required
+        >
+        <br><br>
+
+        <label for="subject">Subject</label><br>
+        <input
+            type="text"
+            id="subject"
+            name="Subject"
+            placeholder="Enter the subject"
+            required
+        >
+        <br><br>
+
+        <label for="message">Message</label><br>
+        <textarea
+            id="message"
+            name="Message"
+            rows="6"
+            placeholder="Write your message..."
+            required
+        ></textarea>
+        <br><br>
+
+        <button type="submit" class="email-button">
+    <span class="button-text">Send Email</span>
+    <span class="button-success">Email Sent ✓</span>
+</button>
+<script src="contact.js"></script>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PastPaper Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="scroll.js"></script>
+</body>
+</html>

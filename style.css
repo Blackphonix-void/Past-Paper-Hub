@@ -1,0 +1,913 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   1. COLOUR PALETTE
+========================= */
+
+:root {
+    --white: #ffffff;
+    --background: #f4f8ff;
+    --light-blue: #e3f0ff;
+    --sky-blue: #65b9ff;
+    --blue: #2589e8;
+    --royal-blue: #155eef;
+    --deep-blue: #102a56;
+    --navy: #071b3a;
+    --yellow: #ffcf33;
+    --text: #172b4d;
+    --muted: #64748b;
+    --card: #ffffff;
+    --border: #dbe7f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* =========================
+   2. ANIMATED BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -180px;
+    left: -180px;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(101, 185, 255, 0.25),
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+    animation: glowMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(280px, 350px);
+    }
+}
+
+/* =========================
+   3. NAVIGATION
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(16, 42, 86, 0.05);
+    animation: slideDown 0.8s ease both;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--royal-blue);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--blue);
+    text-shadow: 0 0 15px rgba(37, 137, 232, 0.25);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--deep-blue);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    border-radius: 5px;
+    background: var(--yellow);
+    transition: width 0.35s ease;
+}
+
+.nav-links a:hover {
+    color: var(--royal-blue);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   4. HOME HERO SECTION
+========================= */
+
+.hero {
+    min-height: 75vh;
+    padding: 100px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at top left,
+            rgba(101, 185, 255, 0.22),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at bottom right,
+            rgba(255, 207, 51, 0.18),
+            transparent 45%
+        );
+}
+
+.hero h1 {
+    max-width: 900px;
+    color: var(--navy);
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    animation: fadeUp 1s ease both;
+}
+
+.hero h1:hover {
+    text-shadow: 0 0 20px rgba(37, 137, 232, 0.15);
+}
+
+.hero p {
+    max-width: 650px;
+    margin-bottom: 35px;
+    color: var(--muted);
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+/* =========================
+   5. ANIMATED BUTTON
+========================= */
+
+.btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 14px 28px;
+    border: 2px solid var(--royal-blue);
+    border-radius: 9px;
+    background: var(--royal-blue);
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(21, 94, 239, 0.18);
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+    animation: fadeUp 1s ease 0.4s both;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 150%;
+}
+
+.btn:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    box-shadow: 0 8px 25px #0357ff;
+    transform: translateY(-4px);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   6. CONTENT SECTIONS
+========================= */
+
+.content-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 75px 25px;
+}
+
+.content-section h2 {
+    color: var(--deep-blue);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 20px;
+}
+
+.content-section h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin-top: 8px;
+    border-radius: 10px;
+    background: var(--yellow);
+    transition: width 0.4s ease;
+}
+
+.content-section h2:hover::after {
+    width: 110px;
+}
+
+.content-section > p {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+/* =========================
+   7. FEATURE CARDS
+========================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(16, 42, 86, 0.04);
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+    animation: fadeUp 0.8s ease both;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(101, 185, 255, 0.25);
+    filter: blur(30px);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+}
+
+.feature-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--yellow);
+    transition: width 0.4s ease;
+}
+
+.feature-card:hover::before {
+    transform: scale(1.8);
+}
+
+.feature-card:hover::after {
+    width: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--sky-blue);
+    box-shadow: 0 15px 35px rgba(21, 94, 239, 0.12);
+}
+
+.feature-card h3 {
+    position: relative;
+    color: var(--royal-blue);
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    position: relative;
+    color: var(--muted);
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* =========================
+   8. ABOUT & CONTACT HEADERS
+========================= */
+
+.page-header {
+    padding: 90px 25px;
+    text-align: center;
+    background: linear-gradient(
+        120deg,
+        var(--light-blue),
+        var(--white),
+        #fff8d9,
+        var(--light-blue)
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
+}
+
+.page-header h1 {
+    color: var(--navy);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 12px;
+    animation: fadeUp 0.8s ease both;
+}
+
+.page-header p {
+    color: var(--muted);
+    animation: fadeUp 0.8s ease 0.2s both;
+}
+
+/* =========================
+   9. CONTACT LINKS
+========================= */
+
+.contact-section a {
+    color: var(--royal-blue);
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-section a:hover {
+    color: #0b47bd;
+    text-shadow: 0 0 12px rgba(37, 137, 232, 0.2);
+}
+
+/* =========================
+   10. FOOTER
+========================= */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #dceaff;
+    background: var(--navy);
+    border-top: 4px solid var(--yellow);
+    font-size: 0.9rem;
+    transition: border-color 0.4s ease;
+}
+
+footer:hover {
+    border-color: var(--sky-blue);
+}
+
+/* =========================
+   11. ANIMATION KEYFRAMES
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================
+   12. MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 65vh;
+        padding: 75px 20px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 50px 20px;
+    }
+}
+
+/* =========================
+   13. REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================
+   EMAIL FORM
+========================= */
+
+form[action^="mailto:"] {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #dbe7f5;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(21, 94, 239, 0.09);
+    animation: fadeUp 0.8s ease both;
+    transition: box-shadow 0.4s ease,
+                border-color 0.4s ease;
+}
+
+form[action^="mailto:"]:hover {
+    border-color: #65b9ff;
+    box-shadow: 0 15px 40px rgba(21, 94, 239, 0.15);
+}
+
+/* Labels */
+
+form[action^="mailto:"] label {
+    margin-bottom: 8px;
+    color: #102a56;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Input fields and message box */
+
+form[action^="mailto:"] input,
+form[action^="mailto:"] textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #dbe7f5;
+    border-radius: 9px;
+    outline: none;
+    background: #f7faff;
+    color: #172b4d;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Placeholder text */
+
+form[action^="mailto:"] input::placeholder,
+form[action^="mailto:"] textarea::placeholder {
+    color: #94a8c2;
+    transition: color 0.3s ease;
+}
+
+/* Animated focus effect */
+
+form[action^="mailto:"] input:focus,
+form[action^="mailto:"] textarea:focus {
+    border-color: #2589e8;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(101, 185, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+form[action^="mailto:"] input:focus::placeholder,
+form[action^="mailto:"] textarea:focus::placeholder {
+    color: #65b9ff;
+}
+
+/* Message box */
+
+form[action^="mailto:"] textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* =========================
+   SEND EMAIL BUTTON
+========================= */
+
+form[action^="mailto:"] button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    margin-top: 10px;
+    padding: 14px 24px;
+
+    border: 2px solid #155eef;
+    border-radius: 9px;
+}
+
+
+/* Email button text transition */
+
+.email-button {
+    position: relative;
+    overflow: hidden;
+    min-height: 52px;
+}
+
+.email-button .button-text,
+.email-button .button-success {
+    display: block;
+    transition:
+        transform 0.4s ease,
+        opacity 0.3s ease;
+}
+
+.email-button .button-success {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #16a34a;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(100%);
+    border-radius: inherit;
+}
+
+.email-button.is-sent {
+    background: #16a34a;
+    border-color: #16a34a;
+    box-shadow: 0 0 22px rgba(22, 163, 74, 0.3);
+}
+
+.email-button.is-sent .button-text {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.email-button.is-sent .button-success {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .email-button .button-text,
+    .email-button .button-success {
+        transition: none;
+    }
+}
+
+/* Initial state: hidden and slightly lower */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* Final state: visible in its normal position */
+
+.hidden.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: animate cards with a slight delay */
+
+.feature-card:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.feature-card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.feature-card:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+    .hidden,
+    .hidden.show {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ===== PASTPAPER HUB: NEW ELEMENTS ===== */
+
+/* Search section */
+#paper-search {
+  padding: 70px 20px;
+  scroll-margin-top: 90px;
+}
+
+#paper-search h2 {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  color: #155eef;
+}
+
+#paper-search > p {
+  text-align: center;
+  color: #bdbdbd;
+  margin-bottom: 30px;
+}
+
+/* Search controls */
+#searchInput,
+#gradeFilter,
+#yearFilter {
+  width: 100%;
+  min-width: 0;
+  padding: 15px 16px;
+  color: #fff;
+  background: #151515;
+  border: 1px solid #383838;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#searchInput::placeholder {
+  color: #888;
+}
+
+#searchInput:focus,
+#gradeFilter:focus,
+#yearFilter:focus {
+  border-color: #0b47bd;
+  box-shadow: 0 0 0 3px rgb(255 101 0 / 16%);
+}
+
+#gradeFilter,
+#yearFilter {
+  cursor: pointer;
+}
+
+#gradeFilter option,
+#yearFilter option {
+  background: #151515;
+  color: #fff;
+}
+
+/* Search and filter layout */
+#paper-search form,
+.search-controls {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#paper-search input,
+#paper-search select {
+  box-sizing: border-box;
+}
+
+#clearSearch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px 20px;
+  color: #0b47bd;
+  background: transparent;
+  border: 1px solid #155eef;
+  border-radius: 10px;
+  box-shadow: #0558ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+#clearSearch:hover {
+  color: #fff;
+  background: #0b47bd;
+  box-shadow: 0 0 18px #0050f1;
+}
+
+/* Search status messages */
+#searchStatus {
+  max-width: 900px;
+  margin: 20px auto;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Paper results grid */
+#paperResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 30px auto 0;
+}
+
+/* Individual paper cards */
+.paper-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  background: linear-gradient(145deg, #1c1c1c, #101010);
+  border: 1px solid #303030;
+  border-radius: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.paper-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: #0b47bd;
+}
+
+.paper-card:hover {
+  transform: translateY(-5px);
+  border-color: #155eef;
+  box-shadow: 0 15px 35px rgb(0 0 0 / 30%);
+}
+
+.paper-card h3 {
+  margin: 0 0 14px;
+  color: #155eef;
+;
+  font-size: 1.2rem;
+  overflow-wrap: anywhere;
+}
+
+.paper-card p {
+  margin: 9px 0;
+  color: #c7c7c7;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.paper-card button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #155eef, #1754cf);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+.paper-card button:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 0 18px #0449d2;
+}
+
+.paper-card button:focus-visible,
+#clearSearch:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Upload links and buttons */
+a[href="upload.html"],
+.upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  color: #fff;
+  background: linear-gradient(135deg, #0168ad,#2589e8);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+a[href="upload]
